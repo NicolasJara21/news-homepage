@@ -8,8 +8,9 @@
     font-style: normal;
 }
 body{
-    padding-left: 120px;
-    padding-right: 120px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 20px;
 }
 .header{
     margin: 0px 50px 0px 50px;
@@ -19,7 +20,7 @@ body{
     align-items: center;
 }
 .logo{
-    font-size: 60px;
+    font-size: 300%;
     font-family: none;
     font-weight: 900;
     position: relative;
@@ -28,7 +29,10 @@ body{
 }
 .nav{
     display: flex;
-    
+}
+.nav-menu{
+    width: 30px;
+    display: none;
 }
 .nav-a{
     margin: auto 6%;
@@ -48,10 +52,12 @@ body{
 }
 
 /* container web */
-.web-img{
+.web-div-img{
+    background-image: url('assets/images/image-web-3-desktop.jpg');
+    background-size: cover;
     height: 300px;
     width: 700px;
-    object-fit: cover;
+
 }
 .web-grid{
     display: grid;
@@ -169,4 +175,70 @@ body{
 }
 .number-parrafo{
     color: rgb(86, 86, 86);
+
+
+}
+/* media */
+
+@media screen and (max-width: 700px) {
+    body {
+        width: 100%; 
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .header {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .nav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #fff;
+        width: 170px;
+        height: 400px;
+        left: 300px;
+    }
+    .nav-menu:hover + .nav{
+        display: flex;
+    }
+    .logo-div{
+        padding: 0px 50px;
+    }
+    .nav-menu {
+        position: relative;
+        left: 260%;
+        display: flex;
+    }
+    .container-all {
+        display: flex;
+        flex-direction: column;
+    }
+    .web-div-img {
+        background-image: url(assets/images/image-web-3-mobile.jpg); /* Asegúrate de que la ruta sea correcta */
+        width: 90vw;
+        object-fit: cover;
+    }
+    .web-grid{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 200px;
+    }
+    .web-div{
+        align-content: center;
+    }
+    .web-div-button{
+        align-content: center;
+        padding: 10px 10px;
+    }
+    .container-new{
+        width: 85%;
+        margin-bottom: 20px;
+    }
+    .container-number{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 20px;
+    }
 }
